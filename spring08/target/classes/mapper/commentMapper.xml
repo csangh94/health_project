@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="comment">
+	<insert id="insert" parameterType="commentDTO">
+		insert into "BBS"
+		values(#{id},#{title},#{content},#{writer})
+	</insert>
+	<select id="select" resultType="commentDTO">
+		select * from "BBS"
+	</select>
+	<select id="select2" parameterType="String" resultType="commentDTO">
+		select *
+		from "BBS" where id=#{id}
+	</select>
+</mapper>
